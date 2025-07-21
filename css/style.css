@@ -139,6 +139,7 @@ body {
   flex: 4;
 
   .experience-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -198,6 +199,28 @@ body {
         }
       }
     }
+
+    .job:first-child::after {
+      content: "most recent";
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      font-weight: 500;
+      font-style: Medium;
+      font-size: 8px;
+
+      justify-content: space-between;
+
+      border-radius: 59px;
+      padding: 2px 4px;
+
+      line-height: 155%;
+      letter-spacing: 0%;
+      text-align: center;
+      vertical-align: middle;
+      color: #ddf163;
+      background-color: #7e731266;
+    }
   }
 }
 
@@ -205,14 +228,14 @@ body {
   flex: 2;
 
   .education-content {
-    display: flex;
-
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 16px;
+    align-items: start;
 
     .degree {
       width: 116px;
-      height: 120px;
+      position: relative;
       border-radius: 10px;
       background-color: white;
       padding: 8px;
@@ -238,6 +261,17 @@ body {
       .hashtags {
         color: white;
       }
+    }
+
+    .degree:first-child::after {
+      position: absolute;
+      right: 8px;
+      top: 8px;
+      content: "";
+      background-image: url("../img/Vector.svg");
+      display: inline-block;
+      width: 11px;
+      height: 10px;
     }
   }
 }
