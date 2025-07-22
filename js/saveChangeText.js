@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
 
   editableElements.forEach((el) => {
-    const generateStableId = (element) => {
+    const generateId = (element) => {
       const path = [];
       let current = element;
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       return "editable-" + path.join("-");
     };
 
-    const id = generateStableId(el);
+    const id = generateId(el);
     el.setAttribute("data-id", id);
 
     const savedText = localStorage.getItem(id);
