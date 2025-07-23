@@ -385,8 +385,42 @@ body {
   transition: transform 0.3s;
 }
 
-.click-obj:hover {
-  transform: scale(1.05);
+.click-obj:focus {
+  animation: pulse 2s ease infinite, borderGlow 2s linear infinite;
+  outline: none;
+  border: 2px solid transparent;
+  border-radius: 1rem;
+  padding: 0.2rem 0.5rem;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    border-color: #ff0000;
+  }
+  25% {
+    border-color: #ffff00;
+  }
+  50% {
+    border-color: #00ff00;
+  }
+  75% {
+    border-color: #00ffff;
+  }
+  100% {
+    border-color: #ff00ff;
+  }
 }
 
 .wave-effect {
