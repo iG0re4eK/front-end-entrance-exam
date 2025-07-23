@@ -1,35 +1,26 @@
-document.querySelector(".pdf-download").addEventListener("click", function () {
-  const element = document.querySelector(".container");
-  const button = document.querySelector(".pdf-download");
+document.querySelector(".pdf-download").addEventListener("click", async () => {
+  const element = document.getElementById("content-to-export");
 
-  button.style.display = "none";
-
-  const opt = {
-    margin: 32,
-    filename: "resume.pdf",
-    image: {
-      type: "jpeg",
-      quality: 1,
-    },
+  const options = {
+    margin: 10,
+    filename: "document.pdf",
     html2canvas: {
       scale: 2,
-      scrollY: 0,
-      width: element.scrollWidth,
-      height: element.scrollHeight,
+      useCORS: true,
+      allowTaint: true,
+      logging: true,
     },
     jsPDF: {
       unit: "mm",
       format: "a4",
       orientation: "portrait",
-      putOnlyUsedFonts: true,
     },
   };
 
-  html2pdf()
-    .set(opt)
-    .from(element)
-    .save()
-    .then(() => {
-      button.style.display = "block";
-    });
+  try {
+    await html2pdf().set(options).from(element).save();
+  } catch (error) {
+    console.error("Ошибка:", error);
+    alert("PDF не создан. Проверьте консоль.");
+  }
 });
