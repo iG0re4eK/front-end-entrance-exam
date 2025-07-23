@@ -12,7 +12,7 @@
     <div class="container">
       <div class="section section-1">
         <div class="logo wave-effect">
-          <img src="./img/logo.jpg" alt="logo" />
+          <img src="./img/logo.jpg" alt="logo" fetchpriority="high" />
         </div>
 
         <div class="welcome card wave-effect">
@@ -356,11 +356,17 @@
     </div>
     <button class="pdf-download wave-effect click-obj">download pdf</button>
 
-    <script src="./js/materialWave.js"></script>
-    <script src="./js/saveChangeText.js"></script>
-    <script src="./js/downloadPdf.js"></script>
+    <script src="./js/materialWave.js" defer></script>
+    <script src="./js/saveChangeText.js" defer></script>
+    <script src="./js/downloadPdf.js" defer></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"
+      defer
+    ></script>
   </body>
 </html>
