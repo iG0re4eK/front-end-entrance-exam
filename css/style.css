@@ -5,7 +5,8 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins";
+  font-display: optional;
 }
 
 .container {
@@ -361,7 +362,7 @@ body {
 }
 
 .pdf-download {
-  margin: 0 auto 2rem;
+  margin: 0 auto 1rem;
   background-color: #28d979;
   border: none;
   display: flex;
@@ -487,7 +488,7 @@ body {
 
 @media (min-width: 320px) and (max-width: 576px) {
   .container {
-    width: 420px;
+    width: auto;
   }
 
   .card {
